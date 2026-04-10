@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(npm *)",
+      "Bash(python3 *)"
+    ],
+    "deny": []
+  },
+  "env": {
+    "JIRA_WORKSPACE": "{{JIRA_WORKSPACE}}"
+  }
+}

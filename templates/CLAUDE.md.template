@@ -1,0 +1,23 @@
+# {{PROJECT_NAME}}
+
+## Overview
+{{PROJECT_DESCRIPTION}}
+
+## Tech Stack
+- {{LANGUAGE}} — {{FRAMEWORK}}
+- {{CI_CD}} CI/CD
+- {{CLOUD}} infrastructure
+
+## Key Conventions
+- Conventional commits: `type(scope): message`
+- Branch format: `{{BRANCH_PATTERN}}`
+- All PRs require passing CI before merge
+
+## Useful Commands (Claude Code)
+- `/review-comment <PR>` — review a PR and post inline GitHub comments
+- `/review-fix <PR>` — fix valid review comments on your own PR
+- `/risk-assessment <ticket or PR>` — generate a Change Request Risk Assessment
+- `/jira-to-windsurf <ticket>` — analyze ticket and generate a Cascade prompt
+
+## Project-Specific Notes
+<!-- Add anything a new engineer should know that isn't obvious from the code -->
