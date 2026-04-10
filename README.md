@@ -33,9 +33,10 @@ After setup, these slash commands are available in Claude Code (`claude`) in any
 
 | Command | What it does |
 |---------|-------------|
+| `/cr <ticket>` | Generates a complete Change Request in Jira (all sections + Risk Assessment) from a ticket ID |
 | `/review-comment <PR>` | Reviews a PR diff and posts inline GitHub comments with code suggestions |
 | `/review-fix <PR>` | Reads review comments on your own PR, fixes valid ones, pushes back on incorrect ones |
-| `/risk-assessment <ticket or PR>` | Generates a full Risk Assessment table for a Change Request |
+| `/risk-assessment <ticket or PR>` | Generates a standalone Risk Assessment table for a Change Request |
 | `/jira-to-windsurf <ticket>` | Analyzes a Jira ticket and generates a prompt for Windsurf Cascade |
 | `/branch-from-jira <ticket>` | Creates a properly-named branch and writes a PLAN.md |
 | `/standup [days]` | Generates a standup summary from git, PRs, and Jira activity |
