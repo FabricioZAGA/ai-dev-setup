@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Git hook: prepare-commit-msg
+# Strips Co-Authored-By lines that credit AI assistants (Claude, Copilot, etc.)
+# so commits only show the real author.
+# Installed by ai-dev-setup — https://github.com/FabricioZAGA/ai-dev-setup
+
+COMMIT_MSG_FILE="$1"
+
+# Remove any Co-Authored-By lines referencing AI assistants
+sed -i '' \
+  -e '/Co-Authored-By:.*[Cc]laude/d' \
+  -e '/Co-Authored-By:.*[Aa]nthropic/d' \
+  -e '/Co-Authored-By:.*[Cc]opilot/d' \
+  -e '/Co-Authored-By:.*[Gg]itHub [Aa]ctions/d' \
+  "$COMMIT_MSG_FILE"
+
+# Clean up any trailing blank lines left behind
+# (macOS sed doesn't support \n in address, use perl for this)
+perl -i -0pe 's/\n+$/\n/' "$COMMIT_MSG_FILE"
+
+exit 0
