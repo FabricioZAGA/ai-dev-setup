@@ -41,6 +41,24 @@ After setup, these slash commands are available in Claude Code in any project:
 | `/cr <ticket>` | Generates a complete Change Request in Jira (all sections + Risk Assessment) from a ticket ID. |
 | `/risk-assessment <ticket or PR>` | Generates a standalone Risk Assessment table for a Change Request. |
 | `/standup [days]` | Generates a standup summary from git, PRs, and Jira activity. Defaults to 1 day; use 3 for Monday. |
+| `/plan-doc <topic or ticket>` | Generates a structured multi-phase design / implementation plan: TL;DR, scope, subtasks, risk register, rollback, comm plan, FAQ. Use it for work that spans multiple phases or stakeholders. |
+| `/triage-ticket <ticket>` | Deep research before you touch code: pulls the ticket, traces the codebase, flags hidden complexity, estimates scope, and proposes subtasks. Use when a ticket is large or vague. |
+| `/weekly-report [@user1,@user2]` | Cross-repo activity report for one or more devs over a week. Surfaces work that single-repo dashboards miss (PRs in other repos, reviews, non-code deliverables). |
+
+### Operations
+
+| Command | What it does |
+|---------|-------------|
+| `/pre-flight-check <PR or service>` | Read-only checklist before merging or deploying. Verifies approvals, CI, conflicts, open comments, and (for deploys) backups, rollback plan, stakeholders. |
+| `/merge-pr <PR>` | Pre-merge guard then merge. Checks approvals, CI, open threads. Picks the right merge strategy. Reports post-merge state and what to watch next. |
+| `/validate-deploy <service or URL>` | Captures a baseline of the target (TLS cert, HTTP headers, status), waits for a deploy, then re-checks and produces a side-by-side diff. Use for cert rotations, config swaps, image promotions. |
+| `/cve-fix <CVE-id or package>` | End-to-end remediation for a vulnerable dependency: identifies usage, picks safe version, drafts the bump PR with blast-radius assessment, and a CR-ready summary. |
+
+### Documentation
+
+| Command | What it does |
+|---------|-------------|
+| `/confluence-doc <markdown file>` | Publishes a local markdown file to Confluence as a live page (or updates an existing one). Handles tables, code blocks, links. Outputs the live URL. |
 
 ### Environments
 
